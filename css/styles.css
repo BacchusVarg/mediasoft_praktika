@@ -36,8 +36,12 @@ p{
     color: #64646A
 }
 
+h3{
+    margin: 0;
+}
+
 .container{
-    padding: 5vw;
+    padding: 5vw 10vw;
 }
 
 .landing{
@@ -47,8 +51,281 @@ p{
 nav, .nav-btns{
     display: flex;
     flex-direction: row;
-    height: 10vh;
+    height: 7vh;
 }
 nav{
+    justify-content: space-between;
+    padding: 2vw 5vw 0 5vw;
+}
+
+.nav-btns{
+    justify-content: space-between;
+    align-items: center;
+    width: 40vw;
+}
+
+.round-img{
+    height: 3vw;
+    width: 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 50%;
+}
+
+.black-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    background-color: #1B1B1D;
+    padding: 1vw 1.5vw;
+    border: none;
+    border-radius: 100px;
+    font-weight: 500;
+    font-size: 0.8em;
+    text-transform: uppercase;
+}
+
+.landing-content{
+    display: flex;
+    flex-direction: row;
+}
+
+h1{
+    font-size: 4em;
+}
+
+h2{
+    font-weight: 500;
+    margin: 0 0 0.4em 0;
+}
+
+.landing-content h1{
+    width: 30vw;
+    font-size: 6em;
+    line-height: 1.2em;
+    margin-block-start: 0.3em;
+    margin-block-end: 0.3em;
+}
+
+.leftblock, .rightblock{
+    width: 50%;
+}
+
+.leftblock-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.leftblock-row a{
+    margin-left: 1vw;
+    text-decoration: underline;
+}
+
+.award-img{
+    position: absolute;
+    float: right;
+    top: 25vh;
+    left: 78vw;
+}
+
+.stars-block{
+    background-color: #ffffff;
+    width: 10vw;
+    padding: 1.5vw;
+    border-radius: 20px;
+    width: 12.2vw;
+    position: relative;
+    bottom: 300px;
+}
+
+.stars-block img{
+    width: 9vw;
+}
+
+.stars-block p{
+    margin: 0;
+}
+
+.middle-text{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.middle-text h1{
+    margin-bottom: 0;
+}
+
+.explore-blocks{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.explore-card{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-between;
+    width: 20vw;
+    padding: 35px;
+    border-radius: 24px;
+    box-shadow: 10px 10px 60px rgba(0, 0, 0, .1);
+}
+
+.explore-card img{
+    display: block;
+    margin: 40px auto;
+}
+
+.explore-card button{
+    margin: 0 auto;    
+}
+
+.order{
+    display: flex;
+    flex-direction: row;
+}
+.order h1{
+    line-height: 1.2em;
+    margin-block-end: 0.3em;
+}
+
+.order img{
+    width: 70vw;
+    height: 60vh;
+}
+
+.middle-text2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.rating{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 15vw;
+    height: 10vh;
+    margin: auto;
+}
+
+.rating-stars{
+    display: flex;
+    flex-direction: column;
+    height: 10vh;
+}
+
+.rating-stars img{
+    width: 8vw;
+}
+
+.rating-stars p{
+    margin-block-start: 0.5em;
+    margin-block-end: 0;
+}
+
+.rating h2{
+    margin: 0;
+}
+
+.review-cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.review-cards .round-img{
+    box-shadow: 10px 10px 60px rgba(0, 0, 0, .1);
+}
+
+.review-card{
+    width: 25vw;
+    border-radius: 24px;
+    box-shadow: 10px 10px 60px rgba(0, 0, 0, .1);
+}
+
+.review-card img{
+    width: 25vw;
+}
+
+.card-content{
+    padding: 20px 35px;
+}
+
+.card-name{
+    display: flex;
+    flex-direction: row;
+}
+
+.card-name img{
+    width: 7vw;
+    margin-left: 20px;
+}
+
+.footer{
+    display: flex;
+    flex-direction: row;
+}
+
+.footer .round-img{
+    box-shadow: 10px 10px 60px rgba(0, 0, 0, .1);
+}
+
+.contact{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.contact p{
+    margin-left: 20px;
+}
+
+.round-images{
+    display: flex;
+    flex-direction: row;
+}
+
+.round-images .round-img{
+    margin-right: 20px;
+}
+
+.footer .rightblock{
+    margin-left: 200px;
+}
+
+.email-form{
+    margin-top: 50px;
+}
+
+.form-email input{
+    padding: 1vw 1.5vw;
+    border: none;
+    border-radius: 100px;
+    font-size: 0.8em;
+    box-shadow: 10px 10px 60px rgba(0, 0, 0, .1);
+    margin-bottom: 1em;
+}
+
+.line{
+    background-color: #929292;
+    height: 0.01em;
+    padding: 0 10vw;
+}
+.bottom{
     justify-content: space-between;
 }
