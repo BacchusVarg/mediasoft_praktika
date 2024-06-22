@@ -1621,3 +1621,12 @@
     height: auto;
   }
 }
+
+.find a{
+  display: inline-block;
+}
+
+.find{
+  display: flex;
+  align-items: center;
+}
