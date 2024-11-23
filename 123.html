@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Телефонная книга</title>
+    <style>
+      /* Добавим немного стилей */
+      .contact-card {
+        border: 1px solid #ccc;
+        margin: 5px;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .favorite {
+        background-color: #ffeb3b;
+      }
+      #search-input {
+        margin: 10px;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <h1>Телефонная книга</h1>
+    <input type="text" id="search-input" placeholder="Поиск контактов..." />
+    <button onclick="showModal()">Добавить новый контакт</button>
+
+    <div id="contact-list"></div>
+
+    <div id="add-contact-modal" style="display: none">
+      <input type="text" id="name-input" placeholder="Имя" />
+      <input type="text" id="phone-input" placeholder="Номер телефона" />
+      <label>
+        <input type="checkbox" id="favorite-checkbox" />
+        В избранное
+      </label>
+      <button onclick="addContact()">Сохранить</button>
+      <button onclick="closeModal()">Закрыть</button>
+    </div>
+
+    <script>
+      // Объект для хранения контактов
+      let contacts = [];
+
+      // Функция для отображения контактов
+      function renderContacts() {
+        const contactList = document.getElementById("contact-list");
+        contactList.innerHTML = "";
+
+        // Сортируем и отображаем контакты
+        contacts.sort((a, b) => a.name.localeCompare(b.name));
+        contacts.forEach((contact) => {
+          const card = document.createElement("div");
+          card.className =
+            "contact-card" + (contact.favorite ? " favorite" : "");
+          card.innerHTML = `
+            <span>${contact.name} - ${contact.phone}</span>
+            <div>
+                <button onclick="toggleFavorite('${contact.name}')">⭐️</button>
+                <button onclick="deleteContact('${contact.name}')">Удалить</button>
+            </div>
+        `;
+          contactList.appendChild(card);
+        });
+      }
+
+      // Функция добавления нового контакта
+      function addContact() {
+        const name = document.getElementById("name-input").value;
+        const phone = document.getElementById("phone-input").value;
+        const favorite = document.getElementById("favorite-checkbox").checked;
+
+        if (name && phone) {
+          contacts.push({ name, phone, favorite });
+          renderContacts();
+          closeModal();
+        }
+      }
+
+      // Удаление контакта
+      function deleteContact(name) {
+        contacts = contacts.filter((contact) => contact.name !== name);
+        renderContacts();
+      }
+
+      // Добавление в избранное
+      function toggleFavorite(name) {
+        const contact = contacts.find((contact) => contact.name === name);
+        contact.favorite = !contact.favorite;
+        renderContacts();
+      }
+
+      // Поиск контактов
+      document.getElementById("search-input").addEventListener("input", (e) => {
+        const query = e.target.value.toLowerCase();
+        const filteredContacts = contacts.filter((contact) =>
+          contact.name.toLowerCase().includes(query)
+        );
+        renderContacts(filteredContacts);
+      });
+
+      // Показать модальное окно
+      function showModal() {
+        document.getElementById("add-contact-modal").style.display = "block";
+      }
+
+      // Закрыть модальное окно
+      function closeModal() {
+        document.getElementById("add-contact-modal").style.display = "none";
+        document.getElementById("name-input").value = "";
+        document.getElementById("phone-input").value = "";
+        document.getElementById("favorite-checkbox").checked = false;
+      }
+    </script>
+  </body>
+</html>

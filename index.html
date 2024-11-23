@@ -3,9 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Phone Book</title>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="top_search">
+            <input id="search_input" type="text" placeholder="Search contacts">
+        </div>
+        <div class="contacts_body" id="contacts_body">
+            <!--<div class="card">
+                <img class="card_icon" src="img/user.png" alt="">
+                <div class="card_leftblock horizontal">
+                    <div class="card_name">Name</div>
+                    <div class="card_phone">Phone</div>
+                </div>
+                <div class="card_rightblock horizontal">
+                    <a class="card_delete_icon" href="">
+                        <img src="img/delete-white.png" alt="">
+                    </a>
+                    <a class="card_favorite_icon" href="">
+                        <img src="img/heart-white.png" alt="">
+                    </a>
+                </div>
+            </div>-->
+        </div>
+        <a href="#openModal">
+            <div class="add_button">
+                <img src="img/add.png" alt="">
+            </div>
+        </a>
+        <div id="openModal" class="modal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title">Add new contact</h3>
+                  <a href="#close" title="Close" class="close">×</a>
+                </div>
+                <div class="modal-body">    
+                    <form>
+                        <label for="newname">Name:</label><br>
+                        <input type="text" id="newname" placeholder="Name"><br>
+                        <label for="newnumber">Number:</label><br>
+                        <input type="text" id="newnumber" placeholder="8(___)___-__-__">
+                        <input type="checkbox" id="addtofav">
+                        <label for="addtofav">Add to favorite</label><br>
+                        <button id="submit" onclick="addContact()">Submit</button>
+                      </form> 
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
 </body>
+<script src="js/jquery-3.7.1.min.js" type="text/javascript"></script>
+<script src="js/jquery.maskedinput.js" type="text/javascript"></script>
+<script src="js/script.js"></script>
+<script>
+    //маска для номера
+    $(function(){
+        $("#newnumber").mask("8(999)999-99-99");
+    });
+</script>
 </html>
