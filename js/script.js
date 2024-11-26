@@ -1,12 +1,12 @@
 // Объект для хранения контактов
 let contacts = [];
 
-// Функция для отображения контактов
+// Функция отображения контактов
 function renderContacts(filteredContacts = contacts) {
   const contactList = document.getElementById("contacts_body");
   contactList.innerHTML = "";
 
-  // Сортируем, сначала по избранным, а потом по имени
+  // Сортировка сначала по избранным, потом по имени
   filteredContacts.sort((a, b) => {
     if (a.favorite === b.favorite) {
       return a.name.localeCompare(b.name);
@@ -17,7 +17,7 @@ function renderContacts(filteredContacts = contacts) {
   filteredContacts.forEach((contact) => {
     const card = document.createElement("div");
     card.className = "card" + (contact.favorite ? " favorite" : "");
-    card.innerHTML = `
+    card.innerHTML = ` 
       <img class="card_icon" src="img/user.png" alt="">
       <div class="card_leftblock horizontal">
         <div class="card_name">${contact.name}</div>
@@ -55,7 +55,7 @@ function addContact() {
     document.getElementById("newnumber").value = '';
     document.getElementById("addtofav").checked = false;
   } else {
-    alert("Имя и номер телефона обязательны!");
+    alert("Имя и номер телефона обязательны!"); // Валидация
   }
 }
 
